@@ -13,7 +13,7 @@ main{
   min-height: 100vh;
 }
 .app{
-  background-color: #F6C28B;
+  background-color: #9E788F;
   background-size: cover;
   transition: .4s ease;
 }
@@ -29,6 +29,19 @@ main{
   background-size: cover;
   transition: .4s ease;
 }
+
+.app.perfect{
+  background-color: #F1A208;
+  background-size: cover;
+  transition: .4s ease;
+}
+
+.app.meh{
+  background-color: #3BB273;
+  background-size: cover;
+  transition: .4s ease;
+}
+
 
 .search-box{
   width: 100%;
@@ -81,11 +94,12 @@ main{
 
 .weather-box .temp{
   color: #FFF;
-  font-size: 102px;
+  font-size: 300%;
   font-weight: 500;
   text-align: center;
   text-shadow: 3px 3px rgba(50,50,70,.5);
   padding: 15px 25px;
+  max-width: 100%;
 
   position: relative;
   display: inline-block;
@@ -94,16 +108,82 @@ main{
   background-color: rgba(255, 255, 255, .2);
   box-shadow: 0px 5px rgba(0, 0, 0, .2);
 }
+.temp, #mainTing{
+  color: rgb(94, 179, 194);
+}
 
 .weather-box .weather{
   color: #FFF;
-  font-size: 48px;
+  font-size: 24px;
   font-weight: 700;
   text-shadow: 3px 3px rgba(50, 50, 70, .5);
 }
+
+.rec{
+  color: #FFF;
+  font-size: 55px;
+  font-weight: 700;
+  text-shadow: 3px 3px rgba(50, 50, 70, .5);
+}
+
 #landing{
+  padding-top: 25px;
   font-size: 24px;
   font-style: bold;
-  color: darkgreen;
+  color: rgb(94, 179, 194);
   text-shadow: 2px 2px rgba(50, 50, 70, .5);
+}
+
+.options, .size-button, .unit-button{
+  color: #FFF;
+  font-size: 30px;
+  font-weight: 500;
+  text-shadow: 2px 2px rgba(50, 50, 70, .5);
+}
+
+.options-unit{
+  margin-right: 1%;
+}
+
+.options-unit, .options-size{
+  display: inline-block;
+  position: relative;
+  padding:  5px 25px 5px 25px;
+  text-align: center;
+  margin-top: 15px;
+
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, .2);
+  box-shadow: 0px 5px rgba(0, 0, 0, .2);
+}
+
+
+.size-button, .unit-button{
+  text-decoration: none;
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+
+  border-radius: 10px;
+  padding: 5px 8px;
+  max-width: 100%;
+  color: #FFF;
+}
+
+.size-button:hover, .unit-button:hover{
+  background-color: rgba(0, 0, 0, .4);
+  border-radius: 10px;
+  padding: 5px 8px;
+  max-width: 100%;
+}
+
+.size-button:active, .unit-button:active{
+  background-color: rgba(0, 0, 0, .5);
+  color: black;
+}
+
+.active {
+  background-color: rgba(0, 0, 0, .6);
+  color: black;
 }

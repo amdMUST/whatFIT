@@ -1,15 +1,20 @@
 import React, { useState } from 'react';
 
+
 // api key
 const api = {
   key: "3c886625921753ac0c0f5abd142bbbb8",
   base: "https://api.openweathermap.org/data/2.5/"
 }
 
-function App() {
+// basically the settings
+var options = {
+	unit: "imperial",
+  size: "s"
+}
 
-  var unit = "imperial";
-  var weight = "skinny"
+// main program
+function App() {
 
   const [query, setQuery] = useState('');
   const [weather, setWeather] = useState({});
@@ -17,7 +22,8 @@ function App() {
   const search = evt => {
 
     if( evt.key === "Enter" ){
-      fetch( `${api.base}weather?q=${query}&units=${unit}&APPID=${api.key}` )
+      console.log(`${api.base}weather?q=${query}&units=${options.unit}&APPID=${api.key}`);
+      fetch( `${api.base}weather?q=${query}&units=${options.unit}&APPID=${api.key}` )
         .then( res => res.json() )
         .then( result => {
           setWeather(result);
@@ -44,7 +50,7 @@ function App() {
   return (
     <div className={ 
       (typeof weather.main != "undefined") 
-        ? ( (weather.main.temp > 79) 
+        ? ( (weather.main.temp > 77) 
           ? 'app warm' : 'app cool' ) 
         : 'app' 
     }>
@@ -73,10 +79,14 @@ function App() {
 
             <div className="weather-box">
               <div className="temp">
-                { Math.round( weather.main.temp ) }°{unit === "imperial" ? 'F' : 'C' }
+                { Math.round( weather.main.temp ) }°{options.unit === "metric" ? 'C' : 'F' }
               </div>
               <div className="weather">
-                { weather.weather[0].main }
+                { weather.weather[0].description }
+              </div>
+              <br></br>
+              <div className="rec">
+                bro its so hot pls dont wear anything
               </div>
             </div>
 
@@ -91,8 +101,11 @@ function App() {
             </div>
 
             <div className="weather-box">
-              <div className="temp">
-                whatFit
+              <div className="temp" id="mainTing">
+                whatFIT
+              </div>
+              <div className="options">
+                { displayOptions() }
               </div>
               <div className="weather" id="landing">
                 made by ahmed
@@ -110,3 +123,95 @@ function App() {
 }
 
 export default App;
+
+
+// going to declare the units and the size here
+function displayOptions() {
+
+    function getSize() {
+        return options.size;
+    }
+    function getUnit() {
+        return options.unit;
+    }
+
+    function setSize(theSize){
+        console.log(getSize())
+        options.size = theSize;
+        console.log(getSize())
+    }
+
+    function setUnit(theUnit){
+        console.log(getUnit())
+        options.unit = theUnit;
+        console.log(getUnit())
+    }
+
+    function checkIfActiveUnit(unit){
+        return unit === options.unit;
+    }
+
+    function checkIfActiveSize(size){
+      return size === options.size;
+  }
+
+  // gives you all the options you can change
+  return (
+    <div className="options">
+
+        <div className="options-unit">
+            How do you like
+            <br></br>
+            your weather?
+            <br></br><br></br>
+            <div className="unit">
+                <button 
+                    className="unit-button" 
+                    id = "unit-button1"
+                    onClick= { () => setUnit("imperial") }
+                    
+                 >
+                    fahrenheit 
+                </button>
+            </div>
+            
+            <div className="unit">
+                <button 
+                className="unit-button" 
+                id = "unit-button2"
+                onClick= { () => setUnit("metric") }
+
+                >
+                    celsius
+                </button>
+            </div>
+            <br></br>
+        </div>
+
+        <div className="options-size">
+            What size body 
+            <br></br>
+            do you wear?
+            <br></br><br></br>
+            <div className="size">
+                <button className="size-button" onClick= { () => setSize("s") }>
+                    thin
+                </button>
+            </div>
+            <div className="size">
+                <button className="size-button" onClick= { () => setSize("m") }>
+                    regular
+                </button> 
+            </div>
+            <div className="size">
+                <button className="size-button" onClick= { () => setSize("l") }>
+                    beefy
+                </button>
+            </div>
+        </div>
+
+    </div>
+  
+  
+  );
+}
