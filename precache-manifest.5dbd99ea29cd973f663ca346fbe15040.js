@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "928946190cf6d72c38b21aaa9c9d2945",
+    "revision": "af95588e6767bc41855e0c0cf8622b63",
     "url": "/whatFIT/index.html"
   },
   {
