@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/whatFIT/static/css/main.d4e759c0.chunk.css",
+    "main.js": "/whatFIT/static/js/main.b32216a2.chunk.js",
+    "main.js.map": "/whatFIT/static/js/main.b32216a2.chunk.js.map",
+    "runtime-main.js": "/whatFIT/static/js/runtime-main.710f5009.js",
+    "runtime-main.js.map": "/whatFIT/static/js/runtime-main.710f5009.js.map",
+    "static/js/2.731a3930.chunk.js": "/whatFIT/static/js/2.731a3930.chunk.js",
+    "static/js/2.731a3930.chunk.js.map": "/whatFIT/static/js/2.731a3930.chunk.js.map",
+    "index.html": "/whatFIT/index.html",
+    "precache-manifest.89a9bb44a9356f1ba2e39ce3e697d327.js": "/whatFIT/precache-manifest.89a9bb44a9356f1ba2e39ce3e697d327.js",
+    "service-worker.js": "/whatFIT/service-worker.js",
+    "static/css/main.d4e759c0.chunk.css.map": "/whatFIT/static/css/main.d4e759c0.chunk.css.map",
+    "static/js/2.731a3930.chunk.js.LICENSE.txt": "/whatFIT/static/js/2.731a3930.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.710f5009.js",
+    "static/js/2.731a3930.chunk.js",
+    "static/css/main.d4e759c0.chunk.css",
+    "static/js/main.b32216a2.chunk.js"
+  ]
+}
