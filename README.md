@@ -6,4 +6,4 @@ I built this site as an excersize to introduce myself to react. Hosted on Github
 This project was a great introduction to React and I plan to create more with it!
 
 ###
-### the live site: https://amdmust.github.io/whatFIT/
+### The Live Site: https://amdmust.github.io/whatFIT/
